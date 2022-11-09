@@ -23,10 +23,10 @@ int main()
   /* 出力 */
    for(i = 0; i <=11; i++)  
   {
-    if(i == 5)     //検索する点数を見つけたら
+    if(ZERO_TO_TEN[i] == 5)     //検索する点数を見つけたら
     {
       //iは0から始まるので1を足す(0→1位)
-      printf("%d",ZERO_TO_TEN[i]);
+      printf("%d",i);
       end = 1;  //フラグを立てる
       break;
     }
