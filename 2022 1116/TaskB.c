@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /* 管理するデータの上限個数+1 */
-#define MAX_NUM (10+1)
+#define MAX_NUM (5+1)
 
 /* キュー構造体 */
 typedef struct QUEUE {

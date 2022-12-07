@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /* 管理するデータの上限個数 */
-#define MAX_NUM 10
+#define MAX_NUM 5
 
 /* スタック構造体 */
 typedef struct STACK {
