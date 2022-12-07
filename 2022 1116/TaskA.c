@@ -28,7 +28,7 @@ void push(STACK_T *stack, int input){
 
     /* スタックが満杯なら何もせず関数終了 */
     if(stack->tail >= MAX_NUM - 1){
-        printf("スタックが満杯でPUSHできません\n");
+        printf("Stack is full\n");
         return;
     }
 
@@ -45,7 +45,7 @@ int pop(STACK_T *stack){
 
     /* スタックが空なら何もせずに関数終了 */
     if(stack->tail == -1){
-        printf("スタックが空です\n");
+        printf("Stack is empty\n");
         return -1;
     }
 
@@ -63,7 +63,7 @@ int pop(STACK_T *stack){
 void printStack(STACK_T *stack){
     int i = 0;
 
-    printf("左側がスタックの上側を表しています\n");
+    printf("Left is UpStack::");
     for(i = 0; i <= stack->tail; i++){
         printf("%d,", stack->data[stack->tail - i]);
     }
@@ -71,63 +71,52 @@ void printStack(STACK_T *stack){
 }
 
 int main(void){
+
+    int m;
     int input;
     int output;
     STACK_T stack;
 
     /* スタックを初期化 */
-    initStack(&stack);            
-    printf("PUSHする数1を入力してください");
-    scanf("%d", &input);
-    if (input ==1) {
-        printf("%dをPUSHします\n", input);
+    initStack(&stack);
+
+        printf("PUSH 1\n");
+        scanf("%d", &input);
+        printf("%d=PUSH\n", input);
+        push(&stack, input);
+        printf("View the contents of the stack\n");
         printStack(&stack);
-    }
-    else{
-    printf("1を入力して下さい\n");
-    }
- printf("PUSHする数3を入力してください");
-    scanf("%d", &input);
-    if (input ==3) {
-        printf("%dをPUSHします\n", input);
+        printf("PUSH 3\n");
+        scanf("%d", &input);
+        printf("%d=PUSH\n", input);
+        push(&stack, input);
+        printf("View the contents of the stack\n");
         printStack(&stack);
-    }
-    else{
-    printf("3を入力して下さい\n");
-    }
-     printf("PUSHする数5を入力してください");
-    scanf("%d", &input);
-    if (input ==5) {
-        printf("%dをPUSHします\n", input);
+        printf("PUSH 5\n");
+        scanf("%d", &input);
+        printf("%d=PUSH\n", input);
+        push(&stack, input);
+        printf("View the contents of the stack\n");
         printStack(&stack);
-    }
-    else{
-    printf("5を入力して下さい\n");
-    }
-     printf("PUSHする数7を入力してください");
-    scanf("%d", &input);
-    if (input ==7) {
-        printf("%dをPUSHします\n", input);
+        printf("PUSH 7\n");
+        scanf("%d", &input);
+        printf("%d=PUSH\n", input);
+        push(&stack, input);
+        printf("View the contents of the stack\n");
         printStack(&stack);
-    }
-    else{
-    printf("7を入力して下さい\n");
-    }
-     printf("PUSHする数9を入力してください");
-    scanf("%d", &input);
-    if (input ==9) {
-        printf("%dをPUSHします\n", input);
+        printf("PUSH 9\n");
+        scanf("%d", &input);
+        printf("%d=PUSH\n", input);
+        push(&stack, input);
+        printf("View the contents of the stack\n");
         printStack(&stack);
-    }
-    else{
-    printf("9を入力して下さい\n");
-    }
-    push(&stack, input);
-    printStack(&stack);
-    printf("POPします\n");
-            output = pop(&stack);
-            if(output != -1){
-                printf("%dをPOPしました\n", output);
-            }
+        printf("POP\n");
+        output = pop(&stack);
+        printf("View the contents of the stack\n");
+        printStack(&stack);
+        printf("POP\n");
+        output = pop(&stack);
+        printf("View the contents of the stack\n");
+        printStack(&stack);
     return 0;
 }
