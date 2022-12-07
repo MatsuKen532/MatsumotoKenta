@@ -22,8 +22,8 @@ int dequeue(QUEUE_T*);
 void initQueue(QUEUE_T *queue){
 
     /* キューを空に設定 */
-    queue->head = 0;
-    queue->tail = -1;
+    queue -> head = 0;
+    queue -> tail = -1;
 }
 
 /* ENQUEUEする関数 */
@@ -36,10 +36,10 @@ void enqueue(QUEUE_T *queue, int input){
     }
 
     /* データをデータの最後尾の１つ後ろに格納 */
-    queue->data[(queue->tail + 1) % MAX_NUM] = input;
+    queue -> data[(queue->tail + 1) % MAX_NUM] = input;
 
     /* データの最後尾を１つ後ろに移動 */
-    queue->tail = (queue->tail + 1) % MAX_NUM;
+    queue -> tail = (queue->tail + 1) % MAX_NUM;
 }
 
 /* DEQUEUEする関数 */
@@ -56,7 +56,7 @@ int dequeue(QUEUE_T *queue){
     ret = queue->data[queue->head];
 
     /* データの先頭を１つ後ろにずらす */
-    queue->head = (queue->head + 1) % MAX_NUM;
+    queue -> head = (queue->head + 1) % MAX_NUM;
 
     /* 取得したデータを返却 */
     return ret;

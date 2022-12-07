@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /* 管理するデータの上限個数+1 */
-#define MAX_NUM (5+1)
+#define MAX_NUM (5 + 1)
 
 /* キュー構造体 */
 typedef struct QUEUE {
@@ -22,8 +22,8 @@ int dequeue(QUEUE_T*);
 void initQueue(QUEUE_T *queue){
 
     /* キューを空に設定 */
-    queue->head = 0;
-    queue->tail = -1;
+    queue -> head = 0;
+    queue -> tail = -1;
 }
 
 /* ENQUEUEする関数 */
